@@ -129,7 +129,7 @@
           },
           {
             path: '/sportsShoesCircle/index',
-            title: '品类',
+            title: '潮鞋圈',
             icon: 'el-icon-lollipop'
           },
           {
