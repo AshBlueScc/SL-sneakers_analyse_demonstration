@@ -3,7 +3,7 @@
 git clone git@github.com:AshBlueScc/SL-sneakers_analyse_demonstration.git
 
 # 进入到项目目录
-cd sneakers-circle
+cd SL-sneakers_analyse_demonstration
 
 # 安装依赖
 npm install
