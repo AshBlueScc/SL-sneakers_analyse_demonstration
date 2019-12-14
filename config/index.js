@@ -34,7 +34,10 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
       '/': {
-        target: 'http://172.16.3.89:8080',
+        //公司ip
+        // target: 'http://172.16.3.89:8080',
+        //家里ip
+        target: 'http://192.168.124.16:8080',
         changeOrigin: true
       }
     },
