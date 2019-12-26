@@ -1,8 +1,8 @@
 {
-  "name": "vue-admin",
+  "name": "sneakers-plam",
   "version": "1.0.0",
-  "description": "A Vue.js project",
-  "author": "luichooy <luichooy@163.com>",
+  "description": "Sneakers analyse platform",
+  "author": "light shadow studio<Ash>",
   "private": true,
   "scripts": {
     "alpha": "node build/dev-server.js",
