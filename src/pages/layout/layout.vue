@@ -84,34 +84,34 @@
             title: '首页',
             icon: 'el-icon-adm-home'
           },
-          {
-            path: '/tables',
-            title: '表格管理',
-            icon: 'el-icon-adm-linechart',
-            children: [
-              {path: '/tables/basic', title: '基本表格'},
-              {path: '/tables/sort', title: '排序表格'},
-              {path: '/tables/filter', title: '筛选表格'}
-            ]
-          },
-          {
-            path: '/charts',
-            title: '图表管理',
-            icon: 'el-icon-adm-statistics',
-            children: [
-              {path: '/charts/bar', title: '柱状图'},
-              {path: '/charts/line', title: '折线图'},
-              {path: '/charts/pie', title: '饼图'}
-            ]
-          },
-          {
-            path: '/form',
-            title: '表单管理',
-            icon: 'el-icon-adm-form',
-            children: [
-              {path: '/form/render', title: '渲染表单'}
-            ]
-          },
+          // {
+          //   path: '/tables',
+          //   title: '表格管理',
+          //   icon: 'el-icon-adm-linechart',
+          //   children: [
+          //     {path: '/tables/basic', title: '基本表格'},
+          //     {path: '/tables/sort', title: '排序表格'},
+          //     {path: '/tables/filter', title: '筛选表格'}
+          //   ]
+          // },
+          // {
+          //   path: '/charts',
+          //   title: '图表管理',
+          //   icon: 'el-icon-adm-statistics',
+          //   children: [
+          //     {path: '/charts/bar', title: '柱状图'},
+          //     {path: '/charts/line', title: '折线图'},
+          //     {path: '/charts/pie', title: '饼图'}
+          //   ]
+          // },
+          // {
+          //   path: '/form',
+          //   title: '表单管理',
+          //   icon: 'el-icon-adm-form',
+          //   children: [
+          //     {path: '/form/render', title: '渲染表单'}
+          //   ]
+          // },
           {
             path: '/system/index',
             title: '系统管理',
@@ -128,28 +128,33 @@
             icon: 'el-icon-adm-organization'
           },
           {
-            path: '/sportsShoesCircle/index',
+            path: '/sportsShoesCircle',
             title: '潮鞋圈',
-            icon: 'el-icon-lollipop'
-          },
-          {
-            path: '/database',
-            title: '数据库管理',
-            icon: 'el-icon-s-grid',
+            icon: 'el-icon-lollipop',
             children: [
-              {path: '/database/category', title: '品类管理'},
-              {path: '/database/brand', title: '商标管理'},
-              {path: '/database/product', title: '产品管理'},
-              {path: '/database/product_sold_detail', title: '产品卖出数目管理'},
-              {path: '/database/product_detail', title: '产品详细数据管理'},
-              {path: '/database/product_history_price', title: '产品历史价格管理'}
+              {path: '/sportsShoesCircle/demo/index', title: '观*潮鞋'},
+              {path: '/sportsShoesCircle/high/mostHighTen', title: '涨*上升榜'},
+              {path: '/sportsShoesCircle/low/mostLowTen', title: '跌*下降榜'}
             ]
           },
-          {
-            path: '/test/index',
-            title: '测试',
-            icon: 'el-icon-adm-formsetup'
-          }
+          // {
+          //   path: '/database',
+          //   title: '数据库管理',
+          //   icon: 'el-icon-s-grid',
+          //   children: [
+          //     {path: '/database/category', title: '品类管理'},
+          //     {path: '/database/brand', title: '商标管理'},
+          //     {path: '/database/product', title: '产品管理'},
+          //     {path: '/database/product_sold_detail', title: '产品卖出数目管理'},
+          //     {path: '/database/product_detail', title: '产品详细数据管理'},
+          //     {path: '/database/product_history_price', title: '产品历史价格管理'}
+          //   ]
+          // },
+          // {
+          //   path: '/test/index',
+          //   title: '测试',
+          //   icon: 'el-icon-adm-formsetup'
+          // }
         ],
         isCollapsed: false,
         adminMenuShow: false

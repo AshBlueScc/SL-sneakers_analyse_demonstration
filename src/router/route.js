@@ -37,7 +37,7 @@ export const errorRouter = {
     import('src/pages/error/index')
 };
 
-// 作为main组件子页面展示  但不在左侧菜单显示的路由卸载otherRoter里
+// 作为main组件子页面展示  但不在左侧菜单显示的路由otherRoter里
 export const otherRouter = {
   path: '',
   name: 'otherRouter',
@@ -58,81 +58,81 @@ export const otherRouter = {
 
 // 作为Main组件的子页面展示并且在左侧菜单显示的路由写在appRouter里
 export const appRouter = [
-  {
-    path: '/tables',
-    name: 'tables',
-    title: '表格管理',
-    meta: {
-      requireAuth: true
-    },
-    component: Layout,
-    children: [
-      {
-        path: 'basic',
-        name: 'basic',
-        title: '基本表格',
-        component: () => import('src/pages/tables/basic')
-      },
-      {
-        path: 'sort',
-        name: 'sort',
-        title: '排序表格',
-        component: () => import('src/pages/tables/sort')
-      },
-      {
-        path: 'filter',
-        name: 'filter',
-        title: '筛选表格',
-        component: () => import('src/pages/tables/filter')
-      }
-    ]
-  },
-  {
-    path: '/charts',
-    name: 'charts',
-    title: 'echarts图表',
-    meta: {
-      requireAuth: true
-    },
-    component: Layout,
-    children: [
-      {
-        path: 'bar',
-        name: 'bar',
-        title: '柱状图',
-        component: () => import('src/pages/charts/bar')
-      },
-      {
-        path: 'line',
-        name: 'line',
-        title: '折线图',
-        component: () => import('src/pages/charts/line')
-      },
-      {
-        path: 'pie',
-        name: 'pie',
-        title: '饼图',
-        component: () => import('src/pages/charts/pie')
-      }
-    ]
-  },
-  {
-    path: '/form',
-    name: 'form',
-    title: '表单管理',
-    meta: {
-      requireAuth: true
-    },
-    component: Layout,
-    children: [
-      {
-        path: 'render',
-        name: 'render',
-        title: '渲染表单',
-        component: () => import('src/pages/form/render/render')
-      }
-    ]
-  },
+  // {
+  //   path: '/tables',
+  //   name: 'tables',
+  //   title: '表格管理',
+  //   meta: {
+  //     requireAuth: true
+  //   },
+  //   component: Layout,
+  //   children: [
+  //     {
+  //       path: 'basic',
+  //       name: 'basic',
+  //       title: '基本表格',
+  //       component: () => import('src/pages/tables/basic')
+  //     },
+  //     {
+  //       path: 'sort',
+  //       name: 'sort',
+  //       title: '排序表格',
+  //       component: () => import('src/pages/tables/sort')
+  //     },
+  //     {
+  //       path: 'filter',
+  //       name: 'filter',
+  //       title: '筛选表格',
+  //       component: () => import('src/pages/tables/filter')
+  //     }
+  //   ]
+  // },
+  // {
+  //   path: '/charts',
+  //   name: 'charts',
+  //   title: 'echarts图表',
+  //   meta: {
+  //     requireAuth: true
+  //   },
+  //   component: Layout,
+  //   children: [
+  //     {
+  //       path: 'bar',
+  //       name: 'bar',
+  //       title: '柱状图',
+  //       component: () => import('src/pages/charts/bar')
+  //     },
+  //     {
+  //       path: 'line',
+  //       name: 'line',
+  //       title: '折线图',
+  //       component: () => import('src/pages/charts/line')
+  //     },
+  //     {
+  //       path: 'pie',
+  //       name: 'pie',
+  //       title: '饼图',
+  //       component: () => import('src/pages/charts/pie')
+  //     }
+  //   ]
+  // },
+  // {
+  //   path: '/form',
+  //   name: 'form',
+  //   title: '表单管理',
+  //   meta: {
+  //     requireAuth: true
+  //   },
+  //   component: Layout,
+  //   children: [
+  //     {
+  //       path: 'render',
+  //       name: 'render',
+  //       title: '渲染表单',
+  //       component: () => import('src/pages/form/render/render')
+  //     }
+  //   ]
+  // },
   {
     path: '/system',
     name: 'system',
@@ -194,95 +194,107 @@ export const appRouter = [
     component: Layout,
     children: [
       {
-        path: 'index',
+        path: 'demo/index',
         name: 'category',
         title: '一级页面（主页面）',
-        component: () => import('src/pages/sportsShoesCircle/index')
+        component: () => import('src/pages/sportsShoesCircle/demo/index')
       },
       {
         path: 'brand',
         name: 'brand',
         title: '二级页面',
-        component: () => import('src/pages/sportsShoesCircle/brand') 
+        component: () => import('src/pages/sportsShoesCircle/demo/brand') 
       },
       {
         path: 'product',
         name: 'product',
         title: '三级页面',
-        component: () => import('src/pages/sportsShoesCircle/product') 
+        component: () => import('src/pages/sportsShoesCircle/demo/product') 
       },
       {
         path: 'productDetail',
         name: 'productDetail',
         title: '四级页面',
-        component: () => import('src/pages/sportsShoesCircle/productDetail') 
-      }        
+        component: () => import('src/pages/sportsShoesCircle/demo/productDetail') 
+      },
+      {
+        path: 'high/mostHighTen',
+        name: 'mostHighTen',
+        title: '下级页面',
+        component: () => import('src/pages/sportsShoesCircle/high/mostHighTen') 
+      },
+      {
+        path: 'low/mostLowTen',
+        name: 'mostLowTen',
+        title: '下级页面',
+        component: () => import('src/pages/sportsShoesCircle/low/mostLowTen') 
+      }          
     ]
   },
-  {
-    path: '/database',
-    name: 'database',
-    title: '数据库管理',
-    meta: {
-      requireAuth: true
-    },
-    component: Layout,
-    children: [
-      {
-        path: 'category',
-        name: 'category_index',
-        title: '品类管理',
-        component: () => import('src/pages/database/category')
-      }, 
-      {
-        path: 'brand',
-        name: 'brand_index',
-        title: '商标管理',
-        component: () => import('src/pages/database/brand')
-      }, 
-      {
-        path: 'product',
-        name: 'product_index',
-        title: '产品管理',
-        component: () => import('src/pages/database/product')
-      }, 
-      {
-        path: 'product_detail',
-        name: 'product_detail_index',
-        title: '产品详细数据管理',
-        component: () => import('src/pages/database/product_detail')
-      }, 
-      {
-        path: 'product_sold_detail',
-        name: 'product_sold_detail_index',
-        title: '产品卖出数目管理',
-        component: () => import('src/pages/database/product_sold_detail')
-      }, 
-      {
-        path: 'product_history_price',
-        name: 'product_history_price_index',
-        title: '产品历史价格管理',
-        component: () => import('src/pages/database/product_history_price')
-      }
-    ]
-  },
-  {
-    path: '/test',
-    name: 'test',
-    title: '测试',
-    meta: {
-      requireAuth: true
-    },
-    component: Layout,
-    children: [
-      {
-        path: 'index',
-        name: 'test_index',
-        title: '测试',
-        component: () => import('src/pages/test/test')
-      }
-    ]
-  }
+  // {
+  //   path: '/database',
+  //   name: 'database',
+  //   title: '数据库管理',
+  //   meta: {
+  //     requireAuth: true
+  //   },
+  //   component: Layout,
+  //   children: [
+  //     {
+  //       path: 'category',
+  //       name: 'category_index',
+  //       title: '品类管理',
+  //       component: () => import('src/pages/database/category')
+  //     }, 
+  //     {
+  //       path: 'brand',
+  //       name: 'brand_index',
+  //       title: '商标管理',
+  //       component: () => import('src/pages/database/brand')
+  //     }, 
+  //     {
+  //       path: 'product',
+  //       name: 'product_index',
+  //       title: '产品管理',
+  //       component: () => import('src/pages/database/product')
+  //     }, 
+  //     {
+  //       path: 'product_detail',
+  //       name: 'product_detail_index',
+  //       title: '产品详细数据管理',
+  //       component: () => import('src/pages/database/product_detail')
+  //     }, 
+  //     {
+  //       path: 'product_sold_detail',
+  //       name: 'product_sold_detail_index',
+  //       title: '产品卖出数目管理',
+  //       component: () => import('src/pages/database/product_sold_detail')
+  //     }, 
+  //     {
+  //       path: 'product_history_price',
+  //       name: 'product_history_price_index',
+  //       title: '产品历史价格管理',
+  //       component: () => import('src/pages/database/product_history_price')
+  //     }
+  //   ]
+  // },
+  // {
+  //   path: '/test',
+  //   name: 'test',
+  //   title: '测试',
+  //   meta: {
+  //     requireAuth: true
+  //   },
+  //   component: Layout,
+  //   children: [
+  //     {
+  //       path: 'index',
+  //       name: 'test_index',
+  //       title: '测试',
+  //       component: () => import('src/pages/test/test')
+  //     }
+  //   ]
+  // }
 ];
 
 export const routers = [
