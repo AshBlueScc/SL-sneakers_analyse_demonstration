@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <p>系统管理</p>
+    <p>发售预警</p>
   </div>
 </template>
 <script>

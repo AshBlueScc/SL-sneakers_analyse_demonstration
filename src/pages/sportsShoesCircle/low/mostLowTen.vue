@@ -1,6 +1,6 @@
 <template>
   <div class="setting">
-    系统设置
+   懒加载的前五或者前十的下降榜，价格为主附带数量
   </div>
 </template>
 <script>

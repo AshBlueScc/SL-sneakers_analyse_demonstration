@@ -1,10 +1,4 @@
-/**
- * @Project Name: dogma
- * @Author: luichooy
- * @Date: 2018-02-07 10:53
- * @Email: luichooy@163.com
- * @Idea: WebStorm
- */
+
 const localStorage = window.localStorage;
 export default {
   getItem (key) {

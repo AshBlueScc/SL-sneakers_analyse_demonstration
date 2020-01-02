@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import { routers } from './route';
+import { routes } from './route';
 import { Loading } from 'element-ui';
 import { setTitle } from 'src/assets/js/util';
 
@@ -10,7 +10,7 @@ Vue.use(VueRouter);
 const routerConfig = {
   mode: 'history',
   linkActiveClass: 'active',
-  routes: routers
+  routes: routes
 };
 
 const router = new VueRouter(routerConfig);

@@ -1,11 +1,3 @@
-/**
- * @Author: luichooy
- * @Date:   2017-07-04 15:07
- * @Email:  luichooy@163.com
- * @Last modified by:
- * @Last modified time: 2017-07-14 14:07
- */
-
 export const ADRESS = [{
   value: '110000',
   label: '北京市',

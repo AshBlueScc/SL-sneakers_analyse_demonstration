@@ -25,68 +25,7 @@ const proxyTable = config.dev.proxyTable
 
 const app = express()
 
-const address = require('../src/data/address');
-const barData = require('../src/data/charts/bar');
-const lineData = require('../src/data/charts/line');
-const pieData = require('../src/data/charts/pie');
-const tableData = require('../src/data/tables/tables');
-const formData = require('../src/data/form/form');
-
 var apiRoutes = express.Router();
-
-apiRoutes.get('/addressData', function (req, res) {
-  res.json({
-    errno: 0,
-    data: address
-  });
-});
-
-apiRoutes.get('/getBarData', function (req, res) {
-  res.json({
-    errno: 0,
-    data: barData
-  });
-});
-
-apiRoutes.get('/getLineData', function (req, res) {
-  res.json({
-    errno: 0,
-    data: lineData
-  });
-});
-
-apiRoutes.get('/getPieData', function (req, res) {
-  res.json({
-    errno: 0,
-    data: pieData
-  });
-});
-
-apiRoutes.get('/getTableData', function (req, res) {
-  let query = req.query;
-  let per_page = query.per_page;
-  let cur_page = query.cur_page;
-  
-  let min = per_page * cur_page - per_page;
-  let max = per_page * cur_page;
-  
-  
-  let arr = tableData.slice(min, max);
-  res.json({
-    errno: 0,
-    data: {
-      table: arr,
-      total: tableData.length
-    }
-  });
-});
-
-apiRoutes.get('/getFormData', function (req, res) {
-  res.json({
-    errno: 0,
-    data: formData
-  });
-});
 
 app.use('/api', apiRoutes);
 

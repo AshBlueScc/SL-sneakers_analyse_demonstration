@@ -1,11 +1,3 @@
-/**
- * @Project Name: vue-admin
- * @Author: luichooy
- * @Date: 2017-11-20 10:19
- * @Email: luichooy@163.com
- * @Idea: WebStorm
- */
-
 export function formatDate (date, fmt) {
   if (/(y+)/.test(fmt)) {
     fmt = fmt.replace(RegExp.$1, (date.getFullYear() + '').substr(4 - RegExp.$1.length));
