@@ -4,30 +4,11 @@ import Layout from 'src/pages/layout/layout';
 const loginRouter = {
   path: '/login',
   name: 'Login',
+  alias: ['/index.html', '/index'],
   meta: {
     title: 'Login - 登录'
   },
   component: () => import('src/pages/login/login.vue')
-};
-
-export const indexRouter = {
-  path: '/index',
-  name: 'index',
-  redirect: '/login/login',
-  meta: {
-    requireAuth: false
-  },
-  component: Layout,
-  children: [
-    {
-      path: '/login',
-      name: 'login',
-      meta: {
-        title: 'Login - 登录'
-      },
-      component: () => import('src/pages/login/login')
-    }
-  ]
 };
 
 // 错误页面
@@ -183,7 +164,6 @@ export const routes = [
   loginRouter,
   errorRouter,
   otherRouter,
-  indexRouter,
   // sportsShoesCircleStation,
   ...appRouter
 ];
