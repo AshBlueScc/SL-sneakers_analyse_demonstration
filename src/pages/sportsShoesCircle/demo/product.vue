@@ -81,7 +81,7 @@ import Vue from 'vue'
             },
             jump2ProductDetail(productDetail){
                 this.$router.push({
-                　　path: '/sportsShoesCircle/productDetail',
+                　　path: '/sportsShoesCircle/demo/productDetail',
                 　　query: {
                         pdetail: productDetail,
                         brandName: this.brandName,
@@ -94,7 +94,7 @@ import Vue from 'vue'
             },
             jump2Brand(){
                 this.$router.push({
-        　　        path: '/sportsShoesCircle/brand',
+        　　        path: '/sportsShoesCircle/demo/brand',
             　　    query: {
                         category: this.$route.query.category,
         　　        }
@@ -102,7 +102,7 @@ import Vue from 'vue'
             },
             jump2Category() {
                 this.$router.push({
-        　　        path: '/sportsShoesCircle/index',
+        　　        path: '/sportsShoesCircle/demo/index',
             　　    query: {
         　　        }
                 })

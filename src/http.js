@@ -15,9 +15,9 @@ if (!store.state.token) {
 // axios 配置
 const http = axios.create({
   //开发侧
-  // baseURL: '/LightShadowStudio/thymeleaf/api/v1',
+  baseURL: '/LightShadowStudio/thymeleaf/api/v1',
   //服务器侧
-  baseURL: '/thymeleaf/api/v1',
+  // baseURL: '/thymeleaf/api/v1',
   timeout: 5000,
   headers: {
     'Content-Type': 'application/json;charset=UTF-8'

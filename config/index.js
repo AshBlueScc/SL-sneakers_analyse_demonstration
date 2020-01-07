@@ -34,12 +34,12 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
       '/LightShadowStudio': {
-        //公司ip
-        // target: 'http://172.16.3.89:8080',
+        // 公司ip
+        target: 'http://172.16.3.89:8080',
         //家里ip
         // target: 'http://192.168.124.16:8080',
         //腾讯服务器tiny
-        target: 'http://49.233.180.228:8080',
+        // target: 'http://49.233.180.228:8080',
         changeOrigin: true,
         pathRewrite: {
           '^/LightShadowStudio': ''

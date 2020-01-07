@@ -110,8 +110,8 @@
             icon: 'el-icon-lollipop',
             children: [
               {path: '/sportsShoesCircle/demo/index', title: '观*潮鞋'},
-              {path: '/sportsShoesCircle/high/mostHighTen', title: '涨*上升榜'},
-              {path: '/sportsShoesCircle/low/mostLowTen', title: '跌*下降榜'}
+              {path: '/sportsShoesCircle/high/mostHighTen', title: '涨*升龙榜'},
+              {path: '/sportsShoesCircle/low/mostLowTen', title: '跌*落凤榜'}
             ]
           },
         ],

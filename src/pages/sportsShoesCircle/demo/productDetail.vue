@@ -36,7 +36,7 @@
           <template>       
             <div style="float: left; width: 400px; margin-right: 0;">
               <label>尺码:</label>
-              <el-select size="mini" v-model="sizeValue" placeholder="36" @change="sizeToPrice= latestSizePrice.find(x => x.size === sizeValue), getLatestWeekPrice()">
+              <el-select size="mini" v-model="sizeValue" placeholder="36" @change="sizeToPrice= latestSizePrice.find(x => x.size === sizeValue), getLatestWeekPrice(), getLatestMonthPrice()">
                 <!-- <template slot-scope="scope"> -->
                   <el-option
                     v-for="item in latestSizePrice"
@@ -87,7 +87,7 @@
               <el-col :span="24" style="padding-top: 8px;">
                 <el-card>
                   <div slot="header">一月销量价格趋势图</div>
-                  <!-- <chart ref="C" :options="optionsC" style="width: 100%;"></chart> -->
+                  <chart ref="C" :options="optionsC" style="width: 100%;"></chart>
                 </el-card>
               </el-col>
             </el-row>
@@ -163,7 +163,7 @@ import Vue from 'vue'
             {
               name: '现货出售',
               type: 'line',
-              stack: '总量',
+              // stack: '总量',
               data: null,
               itemStyle: {
                 normal: {
@@ -174,7 +174,7 @@ import Vue from 'vue'
             {
               name: '闪电直发',
               type: 'line',
-              stack: '总量',
+              // stack: '总量',
               data: null,
               itemStyle: {
                 normal: {
@@ -185,7 +185,7 @@ import Vue from 'vue'
             {
               name: '立即变现',
               type: 'line',
-              stack: '总量',
+              // stack: '总量',
               data: null,
               itemStyle: {
                 normal: {
@@ -196,7 +196,7 @@ import Vue from 'vue'
             {
               name: '显示价格',
               type: 'line',
-              stack: '总量',
+              // stack: '总量',
               data: null,
               itemStyle: {
                 normal: {
@@ -268,11 +268,96 @@ import Vue from 'vue'
             }
           ]
         },
+        optionsC: {
+          title: {
+            show: false,
+            text: '30天价格趋势图'
+          },
+          tooltip: {
+            trigger: 'axis'
+          },
+          legend: {
+            bottom: 0,
+            data: ['现货出售', '闪电直发', '立即变现', '显示价格']
+          },
+          toolbox: {
+            show: true,
+            feature: {
+              mark: {show: true},
+              dataView: {show: true, readOnly: false},
+              magicType: {show: true, type: ['line', 'bar', 'stack', 'tiled']},
+              restore: {show: true},
+              saveAsImage: {show: true}
+            }
+          },
+          calculable: true,
+          xAxis: [
+            {
+              type: 'category',
+              boundaryGap: false,
+              data: null
+            }
+          ],
+          yAxis: [
+            {
+              type: 'value',
+              axisLabel: {
+                formatter: '{value}元'
+              }
+            }
+          ],
+          series: [
+            {
+              name: '现货出售',
+              type: 'line',
+              // stack: '总量',
+              data: null,
+              itemStyle: {
+                normal: {
+                  color: '#2EC7C9'
+                }
+              }
+            },
+            {
+              name: '闪电直发',
+              type: 'line',
+              // stack: '总量',
+              data: null,
+              itemStyle: {
+                normal: {
+                  color: '#B6A2DE'
+                }
+              }
+            },
+            {
+              name: '立即变现',
+              type: 'line',
+              // stack: '总量',
+              data: null,
+              itemStyle: {
+                normal: {
+                  color: '#5AB1EF'
+                }
+              }
+            },
+            {
+              name: '显示价格',
+              type: 'line',
+              // stack: '总量',
+              data: null,
+              itemStyle: {
+                normal: {
+                  color: '#FFB980'
+                }
+              }
+            }
+          ]
+        },
       }
     },
     methods: {
         dateTransfer(date) {
-            var d = new Date(date-8*60*60*1000);
+            var d = new Date(date);
             var d1 = d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate() + ' ' + d.getHours() + ':' + d.getMinutes() + ':' + d.getSeconds();
             return d1;
         },
@@ -300,7 +385,6 @@ import Vue from 'vue'
             console.log(error)
           })
         },
-        //后面等数据齐全需要修改为具体的productId
         getLineDataLatestWeekSoldNum() {
             this.axios.get(`/getLatestWeekSoldNum?productId=${this.$route.query.pdetail.productId}`)
             .then(data => {
@@ -347,9 +431,31 @@ import Vue from 'vue'
                 console.log(error)
             })
         },
+        getLatestMonthPrice(){
+            this.axios.get(`/getLatestMonthPrice?productId=${this.$route.query.pdetail.productId}&size=${this.sizeToPrice.size}`)
+            .then(data => {
+                const options = data
+                const chartC = this.$refs['C']
+                chartC.showLoading()
+
+                Vue.nextTick(()=>{
+                chartC.mergeOptions({
+                    series: options.series,
+                    xAxis: options.xAxis
+                })
+                });
+                setTimeout(() => {
+                chartC.hideLoading()
+                }, 1000);
+            })
+            .catch(error => {
+                chartC.hideLoading()
+                console.log(error)
+            })
+        },
         jump2Brand(){
             this.$router.push({
-    　　        path: '/sportsShoesCircle/brand',
+    　　        path: '/sportsShoesCircle/demo/brand',
         　　    query: {
                     category: this.$route.query.category,
     　　        }
@@ -357,14 +463,14 @@ import Vue from 'vue'
         },
         jump2Category() {
             this.$router.push({
-    　　        path: '/sportsShoesCircle/index',
+    　　        path: '/sportsShoesCircle/demo/index',
         　　    query: {
     　　        }
             })
         },
         jump2Product(singleBrand){
             this.$router.push({
-            　　path: '/sportsShoesCircle/product',
+            　　path: '/sportsShoesCircle/demo/product',
             　　query: {
                     brand: this.$route.query.brand,
                     categoryName: this.$route.query.categoryName,                  

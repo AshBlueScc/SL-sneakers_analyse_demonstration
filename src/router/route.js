@@ -127,19 +127,19 @@ export const appRouter = [
         component: () => import('src/pages/sportsShoesCircle/demo/index')
       },
       {
-        path: 'brand',
+        path: 'demo/brand',
         name: 'brand',
         title: '二级页面',
         component: () => import('src/pages/sportsShoesCircle/demo/brand') 
       },
       {
-        path: 'product',
+        path: 'demo/product',
         name: 'product',
         title: '三级页面',
         component: () => import('src/pages/sportsShoesCircle/demo/product') 
       },
       {
-        path: 'productDetail',
+        path: 'demo/productDetail',
         name: 'productDetail',
         title: '四级页面',
         component: () => import('src/pages/sportsShoesCircle/demo/productDetail') 

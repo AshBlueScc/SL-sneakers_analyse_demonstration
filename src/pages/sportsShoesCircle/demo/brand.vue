@@ -63,7 +63,7 @@ export default {
     },
     jump2Product(singleBrand){
       this.$router.push({
-    　　path: '/sportsShoesCircle/product',
+    　　path: '/sportsShoesCircle/demo/product',
     　　query: {
           brand: singleBrand,
           categoryName:  this.$route.query.category.categoryName,
@@ -73,7 +73,7 @@ export default {
     },
     jump2Category(){
       this.$router.push({
-    　　path: '/sportsShoesCircle/index',
+    　　path: '/sportsShoesCircle/demo/index',
     　　query: {
 　　    }
       })

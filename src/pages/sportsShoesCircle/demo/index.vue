@@ -69,7 +69,7 @@ export default {
     },
     jump2Brand(singeCategory){
       this.$router.push({
-    　　path: '/sportsShoesCircle/brand',
+    　　path: '/sportsShoesCircle/demo/brand',
     　　query: {
           category: singeCategory,
 　　    }
