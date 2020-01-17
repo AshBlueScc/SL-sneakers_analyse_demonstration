@@ -17,6 +17,7 @@
     "@tweenjs/tween.js": "^17.2.0",
     "animate.css": "^3.5.2",
     "axios": "^0.18.0",
+    "dateformat": "^3.0.3",
     "echarts": "^4.4.0",
     "element-ui": "^2.0.0",
     "normalize.css": "^7.0.0",

@@ -1,11 +1,17 @@
 <template>
   <div>
     <el-card class="box-card">
-      <div>
+      <div style="width:100%;height:30px;">
         <i class="el-icon-location" style="float:left;"></i>
-        <el-breadcrumb separator-class="el-icon-arrow-right" style="margin-left:25px;">      
+        <el-breadcrumb separator-class="el-icon-arrow-right" style="margin-left:25px; width:200px;">      
           <el-breadcrumb-item v-for="item in topPath" :key="item.path" style="cursor:pointer"><font color="#1C83B8">{{item.val}}</font></el-breadcrumb-item>
         </el-breadcrumb>
+        <el-input style="margin-right:10px; margin-top:-20px; float:right;width:200px"
+          placeholder="请输入搜索鞋子的名称"
+          prefix-icon="el-icon-search"
+          v-model="searchInput"
+          @change="searchProduct()">
+        </el-input>
       </div>
     </el-card>
 
@@ -55,6 +61,7 @@ export default {
       singeCategory: '',
       transferCategory: '',
       tableCategory: [],
+      searchInput: ''
     };
   },
   methods: {
@@ -74,6 +81,9 @@ export default {
           category: singeCategory,
 　　    }
       })
+    },
+    searchProduct(){
+      
     }
   }
 }

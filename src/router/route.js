@@ -53,11 +53,11 @@ export const appRouter = [
     component: Layout,
     children: [
       {
-        path: 'index',
-        name: 'presell_index',
-        title: '发售预警',
-        component: () => import('src/pages/presell/index')
-      }
+        path: 'presell',
+        name: 'presell',
+        title: 'snkrs发售预警(来源)',
+        component: () => import('src/pages/presell/presell')
+      }  
     ]
   },
   {
@@ -147,15 +147,27 @@ export const appRouter = [
       {
         path: 'high/mostHighTen',
         name: 'mostHighTen',
-        title: '下级页面',
+        title: '最高排行榜',
         component: () => import('src/pages/sportsShoesCircle/high/mostHighTen') 
       },
       {
         path: 'low/mostLowTen',
         name: 'mostLowTen',
-        title: '下级页面',
+        title: '最低排行榜',
         component: () => import('src/pages/sportsShoesCircle/low/mostLowTen') 
-      }          
+      },
+      {
+        path: 'demo/search-product',
+        name: 'search-product',
+        title: '搜索页面1',
+        component: () => import('src/pages/sportsShoesCircle/demo/search-product') 
+      },
+      {
+        path: 'demo/search-productDetail',
+        name: 'search-productDetail',
+        title: '搜索页面2',
+        component: () => import('src/pages/sportsShoesCircle/demo/search-productDetail') 
+      }              
     ]
   },
 ];

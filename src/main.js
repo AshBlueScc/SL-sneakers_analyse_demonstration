@@ -30,6 +30,9 @@ import 'echarts/lib/component/polar'
 import 'echarts/lib/component/legend'
 import 'echarts/lib/component/title.js'
 
+import dateformat from 'dateformat'
+import formatDate from '@/utils/utils'
+
 require('src/assets/styles/variable.scss');
 require('src/assets/styles/base.scss');
 require('src/assets/styles/common.scss');

@@ -85,9 +85,12 @@
             icon: 'el-icon-adm-home'
           },
           {
-            path: '/presell/index',
+            path: '/presell',
             title: '发售预警',
-            icon: 'el-icon-adm-project'
+            icon: 'el-icon-message-solid',
+            children: [
+              {path: '/presell/presell', title: '源*snkrs'},
+            ]
           },
           {
             path: '/register/index',
