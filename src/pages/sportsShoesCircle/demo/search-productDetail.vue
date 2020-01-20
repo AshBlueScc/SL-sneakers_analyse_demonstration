@@ -22,8 +22,8 @@
       </el-collapse>
     </el-card>
 
-     <div>
-      <el-card class="box-card" >
+    <div>
+      <el-card class="box-card">
         <div style="position: relative; width:450px; float: left;">
           <el-carousel height="300px" width="450px">
             <el-carousel-item v-for="item in detail.images.split(';').slice(0,-1)" :key="item">
@@ -109,11 +109,11 @@ import Vue from 'vue'
     data() {
       return {
         topPath: [
-            {path: 'category', val: '主品牌', index: 0},
-            {path: 'brand', val: '子品牌', index: 1},    
-            {path: 'product', val: '产品', index: 2},
-            {path: 'detail', val: '详细信息', index: 3}      
+            {path: 'index', val: '搜索', index: 0},
+            {path: 'search-product', val: '搜索1', index: 1},     
+            {path: 'search-productDetail', val: '搜索2', index: 2},
         ],  
+        searchInput: '',
         categoryName: '',
         brandName: '',
         sizeToPrice: '',
@@ -453,14 +453,6 @@ import Vue from 'vue'
                 console.log(error)
             })
         },
-        jump2Brand(){
-            this.$router.push({
-    　　        path: '/sportsShoesCircle/demo/brand',
-        　　    query: {
-                    category: this.$route.query.category,
-    　　        }
-            })
-        },
         jump2Category() {
             this.$router.push({
     　　        path: '/sportsShoesCircle/demo/index',
@@ -468,13 +460,11 @@ import Vue from 'vue'
     　　        }
             })
         },
-        jump2Product(singleBrand){
+        jump2Search1(){
             this.$router.push({
-            　　path: '/sportsShoesCircle/demo/product',
+            　　path: '/sportsShoesCircle/demo/search-product',
             　　query: {
-                    brand: this.$route.query.brand,
-                    categoryName: this.$route.query.categoryName,                  
-                    category: this.$route.query.category
+                  searchInput: this.$route.query.searchInput,
         　　    }
             })  
         },    
@@ -483,10 +473,9 @@ import Vue from 'vue'
                 this.jump2Category();
             }
             if(item.index == 1) {
-                this.jump2Brand();
+                this.jump2Search1();
             }
            if(item.index == 2) {
-                this.jump2Product();
             }
         }
     }

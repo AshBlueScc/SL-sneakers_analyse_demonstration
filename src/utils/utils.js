@@ -24,7 +24,7 @@ function padLeftZero (str) {
 
 export function dateTransfer(date) {
   var d = new Date(new Date(date).getTime()+8*60*60*1000);
-  var d1 = d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate() + ' ' +addZeros(d.getHours()) + ':' + addZeros(d.getMinutes())+ ':' + addZeros(d.getSeconds());
+  var d1 = d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate() + ' ' + addZeros(d.getHours()) + ':' + addZeros(d.getMinutes())+ ':' + addZeros(d.getSeconds());
   return d1;
 }
 

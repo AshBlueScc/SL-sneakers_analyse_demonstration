@@ -28,9 +28,9 @@
             :data="tableProduct"
             :highlight-current-row= "true"
             style="width: 100%; height: 400;">
-            <el-table-column label="子品牌名称" width="180">
+            <!-- <el-table-column label="子品牌名称" width="180">
                 <el-badge :value="1" class="item" type="success" />{{brandName}}
-            </el-table-column>
+            </el-table-column> -->
             <el-table-column prop="title" label="产品名称" width="600" />
             <el-table-column label="产品图片" width="200">
                 <template slot-scope="scope">
@@ -39,7 +39,7 @@
             </el-table-column>
             <el-table-column label="( * ╹ ▽ ╹ * )查看详细产品" width="240">
                 <template slot-scope="scope">
-                <el-button type="success" icon="el-icon-search" size="mini" round @click="jump2ProductDetail(scope.row)" style="margin-left:90px">查看3</el-button> 
+                <el-button type="success" icon="el-icon-search" size="mini" round @click="jump2Search2(scope.row)" style="margin-left:90px">查看3</el-button> 
                 </template>
             </el-table-column>
             </el-table>
@@ -51,53 +51,35 @@
 import Vue from 'vue'
     export default {
         created(){
-            this.getProductInfoByBrand();
-            this.getBrandName();
+            this.getProductInfoBySearch();
         },
         data(){
             return {
                 currentDate: new Date(),
                 topPath: [
-                    {path: 'category', val: '主品牌', index: 0},
-                    {path: 'brand', val: '子品牌', index: 1},    
-                    {path: 'product', val: '产品', index: 2}      
+                    {path: 'index', val: '搜索', index: 0},
+                    {path: 'search-product', val: '搜索1', index: 1},     
                 ],    
                 tableProduct: [],
-                brandName: ''
             }    
         },
         methods: {
-            getBrandName(){
-                this.brandName = this.$route.query.brand.brandName;
-            },
-            getProductInfoByBrand() {
-                this.axios.get(`/list/products?categoryId=${this.$route.query.brand.categoryId}&brandId=${this.$route.query.brand.brandId}`)
+            getProductInfoBySearch() {
+                this.axios.get(`/search?productName=${this.$route.query.searchInput}`)
                 .then(data => {
-                    this.tableProduct = data
+                    this.tableProduct = data.data
                 })
                 .catch(error => {
                     console.log(error)
                 })
             },
-            jump2ProductDetail(productDetail){
-                this.$router.push({
-                　　path: '/sportsShoesCircle/demo/productDetail',
+            jump2Search2(productDetail){
+                this.$router.push({    
+                　　path: '/sportsShoesCircle/demo/search-productDetail',
                 　　query: {
                         pdetail: productDetail,
-                        brandName: this.brandName,
-
-                        categoryName: this.$route.query.categoryName,
-                        brand: this.$route.query.brand,
-                        category: this.$route.query.category
+                        searchInput: this.$route.query.searchInput,
             　　    }
-                })
-            },
-            jump2Brand(){
-                this.$router.push({
-        　　        path: '/sportsShoesCircle/demo/brand',
-            　　    query: {
-                        category: this.$route.query.category,
-        　　        }
                 })
             },
             jump2Category() {
@@ -112,7 +94,6 @@ import Vue from 'vue'
                     this.jump2Category();
                 }
                 if(item.index == 1) {
-                    this.jump2Brand();
                 }
             }
         }

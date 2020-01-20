@@ -82,8 +82,16 @@ export default {
 　　    }
       })
     },
+    jump2Search1(){
+      this.$router.push({
+        path: '/sportsShoesCircle/demo/search-product',
+        query: {
+          searchInput: this.searchInput,
+        }
+      })
+    },
     searchProduct(){
-      
+      this.jump2Search1();
     }
   }
 }
