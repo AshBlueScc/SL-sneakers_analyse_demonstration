@@ -103,6 +103,11 @@
             icon: 'el-icon-adm-user'
           },
           {
+            path: '/html_projects/ILOVEYOULNL/网站首页.html',
+            title: '告白',
+            icon: 'el-icon-apple'
+          },
+          {
             path: '/access/index',
             title: '权限管理',
             icon: 'el-icon-adm-organization'

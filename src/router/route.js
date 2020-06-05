@@ -22,7 +22,7 @@ export const errorRouter = {
     import('src/pages/error/index')
 };
 
-// 作为main组件子页面展示  但不在左侧菜单显示的路由otherRoter里
+// 作为main组件子页面展示  但不在左侧菜单显示的路由appRouter里
 export const otherRouter = {
   path: '',
   name: 'otherRouter',
